@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %} {{step.title}} - {{step.course.title}} {% endblock %}
+  <!-- can go up relationships with step.course.title, not just down -->
+
+{% block content %}
+<article>
+  <h2>{{ step.course.title}} </h2>
+  <h3>{{ step.title }}</h3>
+  {{ step.content|linebreaks }}
+  <!-- |linebreaks is a django template filter.
+  it takes two returns, like you'd enter at the end of a paragraph, and
+  turns it into <p> tags -->
+</article>
+{% endblock content %}
